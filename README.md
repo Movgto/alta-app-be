@@ -261,7 +261,11 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 🤝 Contacto
 
-- **Repositorio**: [https://github.com/Movgto/alta-app-be](https://github.com/Movgto/alta-app-be)
+**📧 Correo:** maromvz@gmail.com
+
+## 🖥️ Repositorio Frontend
+
+https://github.com/Movgto/alta-app-fe
 
 ---
 
