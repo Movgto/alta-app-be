@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.whl
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Flask
+instance/
+.webassets-cache
+
+# MySQL
+mysql_data/

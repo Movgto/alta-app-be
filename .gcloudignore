@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+.venv/
+pip-log.txt
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Database
+mysql_data/
+instance/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Others
+*.log
+.DS_Store

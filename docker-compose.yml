@@ -1,0 +1,44 @@
+services:
+  server:
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "${CONTAINER_NAME}"
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app  # Mount current directory for live code changes
+    restart: unless-stopped
+    networks:
+      - alta_network
+
+  mysql_db:
+    image: mysql:lts-oraclelinux9
+    container_name: alta_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - alta_network
+
+networks:
+  alta_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
